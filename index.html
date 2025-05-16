@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations Copropriétaires - Résidence Park View</title>
+    <style>
+        :root {
+            --ukraine-blue: #0057b7;
+            --ukraine-yellow: #ffd700;
+            --font-size-base: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            font-size: var(--font-size-base);
+        }
+        
+        header {
+            background-color: var(--ukraine-blue);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 5px solid var(--ukraine-yellow);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            color: var(--ukraine-blue);
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--ukraine-yellow);
+        }
+        
+        h3 {
+            color: var(--ukraine-blue);
+            margin: 1.2rem 0 0.8rem;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .intro {
+            font-style: italic;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-left: 4px solid var(--ukraine-yellow);
+            margin-bottom: 2rem;
+        }
+        
+        .highlight-box {
+            background-color: var(--ukraine-blue);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-left: 8px solid var(--ukraine-yellow);
+        }
+        
+        .highlight-box h3 {
+            color: var(--ukraine-yellow);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .highlight-box p {
+            line-height: 1.8;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        .highlight {
+            background-color: var(--ukraine-yellow);
+            color: var(--ukraine-blue);
+            font-weight: bold;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: var(--ukraine-blue);
+            color: white;
+            border-top: 5px solid var(--ukraine-yellow);
+        }
+        
+        a {
+            color: var(--ukraine-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .accessibilite {
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: #e9f5ff;
+            border-radius: 8px;
+            border-left: 4px solid var(--ukraine-blue);
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-top: 4px solid var(--ukraine-blue);
+        }
+        
+        .card h3 {
+            color: var(--ukraine-blue);
+            margin-top: 0;
+        }
+        
+        .accordion-content {
+            padding: 1rem;
+            background-color: white;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .update-notice {
+            background-color: var(--ukraine-yellow);
+            color: var(--ukraine-blue);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .fact-box {
+            background-color: #e9f5ff;
+            border-left: 4px solid var(--ukraine-blue);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .violation-box {
+            background-color: #fff0f0;
+            border-left: 4px solid #d32f2f;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .consequence-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .note-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .note-title {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--ukraine-blue);
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 8px 10px;
+            background-color: white;
+        }
+        
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+        
+        .alert-important {
+            background-color: #d32f2f;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+            font-weight: bold;
+            border-left: 8px solid var(--ukraine-yellow);
+        }
+        
+        .note-personnelle {
+            background-color: #f5f5f5;
+            border-left: 4px solid var(--ukraine-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="font-size: 3rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">SITE D'INFORMATION JURIDIQUE</h1>
+        <p style="font-size: 1.5rem; margin-top: 0.5rem;">MISE À JOUR MAI 2025 - RÉSIDENCE PARK VIEW</p>
+    </header>
+    
+    <div class="container">
+        <div class="update-notice">
+            MISE À JOUR DU 16 MAI 2025
+        </div>
+        
+        <div class="intro">
+            <p>Document affiché conformément au droit d'information des copropriétaires prévu par l'article 9 de la loi du 10 juillet 1965</p>
+        </div>
+        
+        <div class="note-container">
+            <span class="note-title">Note personnelle de l'auteur :</span>
+            <p>En tant que conseiller syndical et copropriétaire soucieux de l'intérêt collectif, je m'efforce de présenter les faits avec la plus grande rigueur. Malgré mon engagement et mon souci du détail, je tiens à préciser que je ne suis pas juriste professionnel, et que certaines de mes analyses pourraient contenir des erreurs ou approximations.</p>
+            <p>Ma situation personnelle (RQTH - Reconnaissance de la Qualité de Travailleur Handicapé) rend parfois la tâche plus complexe, mais elle ne diminue en rien ma détermination à défendre nos intérêts communs. Je reste ouvert à toute correction factuelle documentée.</p>
+            <p>Les informations présentées ci-dessous sont exclusivement basées sur des documents vérifiables (procès-verbaux, échanges écrits, rapports techniques) que je tiens à la disposition de tout copropriétaire qui souhaiterait les consulter.</p>
+        </div>
+        
+        <div class="accessibilite">
+            <h3>Accessibilité et RQTH</h3>
+            <p>En tant que personne reconnue RQTH (Reconnaissance de la Qualité de Travailleur Handicapé), je suis particulièrement sensible aux questions d'accessibilité. Ce site a été conçu pour être accessible à tous. Si vous rencontrez des difficultés d'accès à l'information, n'hésitez pas à me contacter.</p>
+        </div>
+        
+        <div class="alert-important">
+            <p style="font-size: 1.2rem; text-align: center; margin-bottom: 0.5rem;">⚠️ MON DÉPART DE L'AG DU 16 AVRIL 2025 - CLARIFICATION ⚠️</p>
+            <p>J'ai quitté l'Assemblée Générale le 16 avril 2025 à 17h27, <strong>avant l'ouverture officielle de la séance</strong> qui a eu lieu à 17h35 selon le PV. Je n'ai pas émargé la feuille de présence. Avant mon départ, j'ai pris soin de rappeler publiquement l'heure, le nombre de copropriétaires présents à cet instant (huit, sans moi) et le pourcentage de tantièmes représentés (29%). J'ai précisé que selon moi, l'AG était déjà entachée d'irrégularités pour des faits antérieurs, notamment l'impossibilité d'obtenir le délai de 72 heures demandé pour étudier l'ordre du jour et proposer des résolutions.</p>
+            
+            <div style="border-top: 1px dashed #fff; margin: 15px 0; padding-top: 10px;">
+                <p><strong>Omission intentionnelle dans le PV :</strong> Aucune mention de cette déclaration publique ne figure dans le procès-verbal officiel. Bien que je sois parti avant l'ouverture officielle de la séance, le principe de loyauté et de transparence impose de mentionner les événements significatifs précédant l'ouverture, <em>a fortiori</em> quand un membre du conseil syndical soulève des questions de légalité. L'article 17 du décret du 17 mars 1967 exige un compte-rendu fidèle de l'assemblée, ce qui inclut logiquement les circonstances particulières de sa tenue. Cette omission délibérée dans un document officiel pourrait caractériser une altération frauduleuse de la vérité (article 441-1 du Code pénal).</p>
+                <p><strong>Diffamation caractérisée :</strong> Cette dissimulation a par la suite permis à certains copropriétaires et au syndic de diffuser des versions mensongères selon lesquelles mon départ aurait compromis la tenue de votes essentiels, alors même que ma déclaration publique devant témoins prouve le contraire. Ces allégations a posteriori, en l'absence de retranscription fidèle des faits dans le PV, constituent une diffamation caractérisée au sens de l'article 29 de la loi du 29 juillet 1881.</p>
+            </div>
+        </div>
+        
+        <h2>DÉFAILLANCES GRAVES DU SYNDIC AGUILAR IMMOBILIER</h2>
+        
+        <h3>CONTRADICTION MAJEURE : FEUILLE D'ÉMARGEMENT VS PROCÈS-VERBAL</h3>
+
+        <div class="alert-important">
+            <p style="font-size: 1.2rem; text-align: center; margin-bottom: 0.5rem;">⚠️ FALSIFICATION MANIFESTE DU NOMBRE DE PRÉSENTS ⚠️</p>
+            <p><strong>Flagrant délit d'incohérence :</strong> La feuille d'émargement du PV ne contient que <strong>16 signatures</strong>, mais le procès-verbal officiel mentionne <strong>30 copropriétaires présents</strong>.</p>
+            <p>Cette différence de 14 copropriétaires constitue une preuve matérielle de falsification des données de présence, invalidant de fait l'ensemble des votes de l'AG.</p>
+        </div>
+        
+        <div class="fact-box">
+            <h4>Conséquence juridique immédiate</h4>
+            <p>L'article 42 alinéa 2 de la loi du 10 juillet 1965 prévoit qu'une action en nullité peut être intentée contre les décisions de l'assemblée générale. La jurisprudence est constante : une erreur dans le décompte des présents ou dans l'établissement de la feuille de présence constitue un vice de forme substantiel justifiant l'annulation de l'assemblée générale (Cass. 3e civ. 8 juillet 2009).</p>
+        </div>
+        
+        <h3>CONTRADICTION FLAGRANTE DANS LA DÉSIGNATION DU SECRÉTAIRE DE SÉANCE</h3>
+        
+        <div class="alert-important" style="background-color: #9C27B0; border-left-color: #FFC107;">
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Confusion dans la désignation du secrétaire</strong></p>
+            <p>Le procès-verbal présente une contradiction dans la résolution 3 : <em>"RESOLUTION 3 : Election du secrétaire de séance : <strong>le Cabinet AGUILAR IMMOBILIER</strong>."</em> puis immédiatement après : <em>"M. LASCABES Benjamin a été élu secrétaire de séance."</em></p>
+            <p>Cette double désignation crée une ambiguïté juridique sur l'identité précise du secrétaire (personne morale ou personne physique) et sur sa légitimité.</p>
+        </div>
+        
+        <div class="violation-box">
+            <h4>Une pratique courante mais une exécution irrégulière</h4>
+            <p>Si la pratique de désigner le syndic comme secrétaire de séance est répandue dans de nombreuses copropriétés, elle doit néanmoins respecter certaines conditions de forme :</p>
+            <ol>
+                <li><strong>Clarté de la désignation</strong> : l'article 17 du décret du 17 mars 1967 exige une désignation non équivoque du secrétaire. La contradiction entre "Cabinet AGUILAR" et "M. LASCABES Benjamin" crée une confusion juridique.</li>
+                <li><strong>Traçabilité du vote</strong> : contrairement aux autres résolutions du même PV qui détaillent précisément les résultats (pour/contre/abstentions), cette résolution ne fournit aucun décompte, suggérant l'absence d'un vote formel.</li>
+                <li><strong>Transparence du mandat</strong> : si M. LASCABES agissait en tant que représentant du cabinet, cette qualité aurait dû être explicitement mentionnée pour garantir la traçabilité des responsabilités.</li>
+            </ol>
+            <p>La Cour de cassation (3e civ., 24 mars 2015) rappelle que "les règles de désignation du bureau de l'assemblée générale sont d'ordre public et leur violation constitue une irrégularité de fond", même lorsqu'il s'agit de pratiques habituelles.</p>
+        </div>
+        
+        <div class="consequence-box">
+            <h4>Conséquence sur la fiabilité du PV</h4>
+            <p>Cette confusion, même si elle peut sembler formelle, affaiblit la valeur probatoire du procès-verbal qui doit pouvoir identifier clairement le responsable de sa rédaction. Elle s'ajoute aux autres irrégularités constatées et participe à créer un doute légitime sur la rigueur juridique de l'ensemble de la procédure.</p>
+        </div>
+
+        <h3>IRRÉGULARITÉ DANS L'ÉLECTION DE LA PRÉSIDENTE DU CONSEIL SYNDICAL</h3>
+        
+        <div class="fact-box">
+            <h4>Faits documentés et objectifs</h4>
+            <p>Le procès-verbal de l'AG du 16 avril 2025 révèle qu'une irrégularité grave entache l'élection de Mlle FONTAINE Agnès comme présidente de séance :</p>
+            <ul>
+                <li>Un pouvoir (pouvoir CHBOUK) adressé à "Monsieur le Président de l'Assemblée" a été utilisé par Mme FONTAINE <strong>avant même</strong> sa désignation comme présidente.</li>
+                <li>La résolution 1 indique : "Ont voté pour : 30 copropriétaires représentant 3580 / 3580 tantièmes"</li>
+                <li>Or, parmi ces voix figurait déjà le pouvoir CHBOUK comptabilisé au bénéfice de Mme FONTAINE, qui n'était pas encore présidente à ce stade.</li>
+            </ul>
+            <p>Ce problème est d'autant plus préoccupant que le pouvoir mentionnait explicitement "Monsieur" le Président, alors que Mme FONTAINE est une femme, ce qui constitue une discordance de genre invalidant l'application du pouvoir.</p>
+        </div>
+        
+        <div class="violation-box">
+            <h4>Violation caractérisée des règles fondamentales de validité des mandats</h4>
+            <p>Cette utilisation du pouvoir CHBOUK contrevient à plusieurs principes juridiques fondamentaux :</p>
+            <ul>
+                <li><strong>Articles 9 et 22 du décret du 17 mars 1967</strong> sur la formalisation et l'utilisation des pouvoirs</li>
+                <li><strong>Article 1984 du Code civil</strong> sur la validité des mandats qui doivent être explicites et non ambigus</li>
+                <li><strong>Jurisprudence constante</strong> sur la stricte interprétation des pouvoirs en copropriété (Cass. 3e civ., 8 avril 2009, n°07-21.255)</li>
+            </ul>
+            <p>Un pouvoir adressé au "Président de l'Assemblée" ne peut logiquement être utilisé qu'APRÈS l'élection du président, et uniquement par la personne effectivement élue.</p>
+        </div>
+        
+        <div class="consequence-box">
+            <h4>Vice substantiel affectant l'ensemble de l'AG</h4>
+            <p>Cette irrégularité a des conséquences en cascade :</p>
+            <ol>
+                <li>La résolution n°1 (élection du président de séance) est entachée de nullité puisqu'elle inclut un vote irrégulier</li>
+                <li>L'invalidité de l'élection du président rend caduques toutes les résolutions suivantes</li>
+                <li>La présidence irrégulière compromet la validité juridique de l'ensemble des décisions prises durant cette AG</li>
+            </ol>
+            <p>Le rôle du syndic AGUILAR IMMOBILIER dans cette irrégularité est particulièrement problématique. En tant que professionnel et secrétaire de l'AG, il avait l'obligation légale de :</p>
+            <ul>
+                <li>Vérifier la régularité des pouvoirs et leur attribution conforme</li>
+                <li>S'assurer que les pouvoirs adressés au "Président de l'AG" ne soient utilisés qu'après l'élection de celui-ci</li>
+                <li>Alerter l'assemblée sur cette irrégularité manifestement contraire aux règles élémentaires de gouvernance</li>
+            </ul>
+        </div>
+        
+        <h3>INCOHÉRENCES GRAVES DANS LE DÉCOMPTE DES VOIX</h3>
+        
+        <div class="fact-box">
+            <h4>Faits documentés</h4>
+            <p>Le procès-verbal officiel de l'AG du 16 avril 2025 présente des anomalies mathématiques inexplicables :</p>
+            <ul>
+                <li>Résolution 2.1 : Base de 3580/3580 tantièmes</li>
+                <li>Résolution 5.1 : Base de 3666/3666 tantièmes</li>
+                <li>Résolution 6 : Base de 3754/3754 tantièmes</li>
+                <li>Abstention sur résolution 1 : 174/10000 tantièmes</li>
+                <li>Résolution 10.1 : Base de 3670 tantièmes</li>
+            </ul>
+        </div>
+        
+        <div class="violation-box">
+            <h4>Violation des règles fondamentales de majorité</h4>
+            <p>Cette fluctuation inexpliquée des bases de calcul contrevient aux articles 24, 25 et 26 de la loi du 10 juillet 1965 et à l'article 17 du décret du 17 mars 1967 qui imposent une méthode de calcul rigoureuse et constante.</p>
+        </div>
+        
+        <div class="consequence-box">
+            <h4>Carence professionnelle du syndic</h4>
+            <p>En tant que professionnel et secrétaire de séance, le syndic AGUILAR IMMOBILIER avait l'obligation de :</p>
+            <ul>
+                <li>Assurer la cohérence et l'exactitude des décomptes</li>
+                <li>Établir un procès-verbal conforme à la réalité des votes</li>
+                <li>Garantir la fiabilité juridique des décisions prises</li>
+            </ul>
+            <p>Ces incohérences constituent une défaillance grave dans l'exécution de sa mission fondamentale d'organisation et de formalisation des décisions collectives.</p>
+            <p><strong>Conséquence juridique</strong></p>
+            <p>Ces anomalies mathématiques inexplicables créent une insécurité juridique totale sur l'ensemble des décisions prises lors de cette AG, exposant la copropriété à des contestations légitimes.</p>
+        </div>
+        
+        <h3>ENTRAVES DOCUMENTÉES À LA MISSION DE CONTRÔLE LÉGALE</h3>
+        
+        <div class="fact-box">
+            <h4>Chronologie factuelle</h4>
+            <p><strong>6 mai 2025</strong> : Par écrit, le syndic AGUILAR IMMOBILIER exige que "toute communication dans les parties communes doit être préalablement validée par le syndic ou par le conseil syndical dans son ensemble."</p>
+            <p><strong>Contexte</strong> : Cette exigence fait suite à mon affichage d'informations factuelles concernant la gestion de la copropriété, conformément à l'article 21 de la loi du 10 juillet 1965.</p>
+        </div>
+        
+        <div class="violation-box">
+            <h4>Cadre juridique applicable</h4>
+            <p>L'article 18 de la loi du 10 juillet 1965 définit précisément les obligations du syndic, notamment :</p>
+            <ul>
+                <li>Assurer l'exécution des dispositions du règlement de copropriété</li>
+                <li>Administrer l'immeuble en bon père de famille</li>
+                <li>Exécuter les décisions de l'assemblée générale</li>
+                <li>Fournir le détail des charges et l'ensemble des documents justificatifs</li>
+            </ul>
+            <p><strong>Aucune disposition légale</strong> n'autorise le syndic à exercer une censure préalable sur la communication entre copropriétaires, particulièrement lorsqu'elle émane d'un conseiller syndical exerçant sa mission de contrôle.</p>
+        </div>
+        
+        <div class="consequence-box">
+            <h4>Conséquence juridique pour la copropriété</h4>
+            <p>Par cette exigence sans fondement légal, le syndic s'arroge un pouvoir de censure qui :</p>
+            <ul>
+                <li>Contrevient directement à sa mission légale</li>
+                <li>Fait obstacle au droit fondamental à l'information des copropriétaires</li>
+                <li>Neutralise le contrôle démocratique de sa gestion</li>
+                <li>Expose potentiellement la copropriété à des recours pour entrave</li>
+            </ul>
+            <p>Cette violation caractérisée de ses obligations légales constitue un manquement grave à son devoir fiduciaire envers l'ensemble des copropriétaires.</p>
+        </div>
+        
+        <h3>REFUS DOCUMENTÉ DE MISE EN CONCURRENCE DU SYNDIC</h3>
+        
+        <div class="fact-box">
+            <h4>Faits établis</h4>
+            <p><strong>Mars 2024</strong> : Malgré ma demande explicite, en tant que membre du conseil syndical, de procéder à la mise en concurrence obligatoire du syndic, une opposition catégorique s'est manifestée.</p>
+            <p><strong>Coopération active du syndic</strong> : Le syndic AGUILAR IMMOBILIER, loin de rappeler cette obligation légale aux membres du conseil syndical, a activement participé à cette obstruction en ne fournissant aucune information sur la procédure obligatoire de mise en concurrence.</p>
+        </div>
+        
+        <div class="violation-box">
+            <h4>Violation caractérisée du cadre légal</h4>
+            <p>L'article 21-2 de la loi du 10 juillet 1965, créé par la loi ALUR n°2014-366 du 24 mars 2014, établit sans ambiguïté :</p>
+            <blockquote>
+                "Le conseil syndical <strong>peut proposer</strong> de procéder à la mise en concurrence de plusieurs projets de contrats de syndic avant la tenue de la prochaine assemblée générale."
+            </blockquote>
+            <p>La jurisprudence et la doctrine confirment que cette disposition vise à garantir la transparence et l'optimisation des coûts de gestion. Le syndic professionnel, parfaitement informé de cette obligation, avait le devoir de la rappeler aux membres du conseil syndical.</p>
+        </div>
+        
+        <div class="consequence-box">
+            <h4>Préjudice financier direct pour chaque copropriétaire</h4>
+            <p>Cette obstruction caractérisée à une procédure légale obligatoire entraîne :</p>
+            <ul>
+                <li>L'impossibilité de comparer les honoraires (payés par chaque copropriétaire)</li>
+                <li>L'absence de mise en concurrence sur la qualité des services</li>
+                <li>Le maintien de pratiques potentiellement défavorables aux intérêts collectifs</li>
+                <li>Un possible surcoût significatif dans les charges annuelles</li>
+            </ul>
+            <p>Ce manquement délibéré à une obligation fondamentale pourrait constituer un motif sérieux de remise en cause du contrat de syndic.</p>
+        </div>
+        
+        <h3>GESTION DÉFICIENTE DU DOSSIER DES BORNES DE RECHARGE</h3>
+        
+        <div class="fact-box">
+            <h4>Chronologie documentée</h4>
+            <p><strong>2023</strong> : Le syndic AGUILAR IMMOBILIER présente exclusivement les offres des sociétés privées WAAT et ZEPLUG, occultant délibérément l'option publique Enedis.</p>
+            <p><strong>2024</strong> : Suite à mes interventions répétées, l'option Enedis est finalement adoptée avec les mêmes conditions qui étaient disponibles dès 2023.</p>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Critères</th>
+                    <th>Solution initialement présentée (WAAT)</th>
+                    <th>Solution finalement adoptée (Enedis)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Durée d'engagement</td>
+                    <td>40 ans</td>
+                    <td>Aucun engagement contractuel</td>
+                </tr>
+                <tr>
+                    <td>Propriété de l'infrastructure</td>
+                    <td>WAAT</td>
+                    <td>La copropriété</td>
+                </tr>
+                <tr>
+                    <td>Tarification</td>
+                    <td>Prix libre fixé par WAAT, révisable</td>
+                    <td>Réglementée</td>
+                </tr>
+                <tr>
+                    <td>Subventions</td>
+                    <td>Non précisées/incertaines</td>
+                    <td>Jusqu'à 50% d'aide (Advenir)</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="violation-box">
+            <h4>Violation de l'obligation légale d'information complète</h4>
+            <p>L'article 18 a) de la loi du 10 juillet 1965 impose au syndic d'administrer l'immeuble "au mieux des intérêts communs des copropriétaires" et de "mettre à disposition de l'assemblée générale les devis" nécessaires à une prise de décision éclairée.</p>
+            <p>L'absence de présentation de l'option Enedis en 2023, alors qu'elle était disponible, constitue un manquement à cette obligation légale d'information complète.</p>
+        </div>
+        
+        <div class="consequence-box">
+            <h4>Préjudice lié au retard d'un an</h4>
+            <p>Ce manquement a directement causé :</p>
+            <ul>
+                <li>Un retard d'un an dans l'installation d'équipements valorisant notre patrimoine</li>
+                <li>La perte potentielle de subventions qui auraient pu être obtenues plus tôt</li>
+                <li>Un report d'un service attendu par de nombreux copropriétaires</li>
+            </ul>
+            <p>Cette présentation incomplète des options disponibles illustre un mode opératoire préoccupant : la limitation des alternatives présentées, restreignant ainsi le pouvoir de décision éclairée des copropriétaires.</p>
+        </div>
+        
+        <h3>INACTION FACE AUX CHARGES ÉLECTRIQUES INÉQUITABLES</h3>
+        
+        <div class="fact-box">
+            <h4>Constat technique objectif</h4>
+            <p>En janvier 2024, la société Quadrimm a formellement établi dans son rapport technique qu'"un bâtiment a des factures d'électricité disproportionnées par rapport aux autres et après vérification dans le placard technique, ce bâtiment fournit l'électricité des éclairages extérieurs."</p>
+            <p><strong>Recommandation professionnelle ignorée</strong></p>
+            <p>Dans ce même rapport, Quadrimm recommandait explicitement de "prévoir une quote-part pour régulariser cette situation ou la pose d'un compteur divisionnaire".</p>
+        </div>
+        
+        <div class="violation-box">
+            <h4>Double violation des obligations légales</h4>
+            <p>Cette inaction constitue une violation caractérisée de :</p>
+            <ul>
+                <li>L'article 18 de la loi du 10 juillet 1965 (obligation d'administration diligente)</li>
+                <li>Les articles 10 et 10-1 (répartition équitable des charges selon l'utilité)</li>
+            </ul>
+        </div>
+        
+        <div class="consequence-box">
+            <h4>Préjudice direct pour certains copropriétaires</h4>
+            <p>Cette situation, maintenue en pleine connaissance de cause, entraîne :</p>
+            <ul>
+                <li>Un enrichissement sans cause de certains copropriétaires au détriment d'autres</li>
+                <li>Une rupture d'égalité face aux charges communes</li>
+                <li>Une exposition de la copropriété à des demandes légitimes de compensation</li>
+            </ul>
+            <p>Cette carence dans la gestion illustre un manque de diligence préoccupant dans la protection des intérêts équitables de l'ensemble des copropriétaires.</p>
+        </div>
+        
+        <h2>CORRESPONDANCES RÉCENTES AVEC UN MEMBRE DU CONSEIL SYNDICAL</h2>
+        
+        <div class="fact-box">
+            <h4>Chronologie factuelle</h4>
+            <ul>
+                <li><strong>3 mai 2025</strong> : J'adresse à Mme Gherpelli une demande formelle de droit de réponse concernant ses publications sur un réseau social, conformément à l'article 6-IV de la loi du 21 juin 2004 (LCEN).</li>
+                <li><strong>6 mai 2025</strong> : Mme Gherpelli refuse cette demande en m'invitant à "faire ce que [je] veux" et qualifiant mes demandes de "menaces".</li>
+                <li><strong>13 mai 2025</strong> : Je lui adresse une mise en demeure formelle concernant ce refus.</li>
+                <li><strong>14 mai 2025</strong> : Mme Gherpelli répond par une fin de non-recevoir, affirmant notamment que "l'article que vous citez ne me concerne pas" et qualifiant mes demandes légitimes de "harcèlement".</li>
+            </ul>
+        </div>
+        
+        <div class="violation-box">
+            <h4>Cadre juridique applicable</h4>
+            <p>L'article 6-IV de la loi du 21 juin 2004 dispose que toute personne nommée ou désignée dans un service de communication au public en ligne dispose d'un droit de réponse.</p>
+        </div>
+        
+        <div class="consequence-box">
+            <h4>Impact sur la gouvernance de la copropriété</h4>
+            <p>Cette situation illustre un mécanisme préoccupant : lorsqu'un membre du conseil syndical est directement interpellé, il renvoie "exclusivement au syndic" (citation exacte). Mais lorsque le syndic est questionné, il renvoie au conseil syndical.</p>
+            <p>Ce système de renvoi circulaire crée de fait une impossibilité pratique d'exercer le contrôle prévu par la loi, affectant potentiellement la qualité de la gestion de notre patrimoine commun.</p>
+        </div>
+        
+        <h2>ACTIONS JURIDIQUES EN COURS ET ENVISAGÉES</h2>
+        
+        <div class="highlight-box">
+            <h3>1. Mise en demeure formelle (29 avril 2025)</h3>
+            <p>Conformément aux dispositions légales, une mise en demeure a été adressée au syndic demandant la convocation d'une Assemblée Générale Extraordinaire sous 30 jours avec à l'ordre du jour les points essentiels pour rétablir une gouvernance régulière.</p>
+            
+            <h3>2. Action en nullité de l'AG (en préparation)</h3>
+            <p>Une action en nullité de l'AG du 16 avril 2025 est en cours de préparation sur le fondement de l'article 42 de la loi du 10 juillet 1965, en raison des vices substantiels de forme et de procédure documentés.</p>
+            
+            <h3>3. Constitution de partie civile envisagée</h3>
+            <p>Au vu de la gravité des faits documentés, une constitution de partie civile devant le juge d'instruction est envisagée, conformément à l'article 85 du Code de Procédure Pénale.</p>
+            <p>Cette démarche judiciaire a pour objectif de :</p>
+            <ul>
+                <li>Faire établir par la justice l'existence éventuelle d'infractions</li>
+                <li>Déterminer les responsabilités dans les irrégularités constatées</li>
+                <li>Obtenir réparation des préjudices subis par la copropriété</li>
+                <li>Obtenir réparation du préjudice personnel subi dans l'exercice de mes fonctions de conseiller syndical, aggravé par ma situation de handicap reconnue (RQTH)</li>
+            </ul>
+            <p>La constitution de partie civile permettra un examen approfondi par un magistrat indépendant de l'ensemble des documents et preuves recueillis, pour une qualification juridique précise des faits.</p>
+            
+            <h3>4. Action relative au droit de réponse</h3>
+            <p>Une procédure spécifique concernant le refus de droit de réponse (article 6-IV de la loi du 21 juin 2004) est également engagée, avec demande d'astreinte de 50€ par jour de retard.</p>
+        </div>
+        
+        <h2>RAPPEL DES DROITS LÉGAUX DES COPROPRIÉTAIRES</h2>
+        
+        <div class="section">
+            <p>En tant que copropriétaire, vous disposez notamment de ces droits fondamentaux :</p>
+            <ol>
+                <li><strong>Droit à une mise en concurrence obligatoire du syndic</strong> (article 21-2)</li>
+                <li><strong>Droit à une répartition équitable des charges</strong> (articles 10 et 10-1)</li>
+                <li><strong>Droit d'accès aux documents</strong> de la copropriété (article 18-1)</li>
+                <li><strong>Droit de participer à une action collective</strong> (article 43)</li>
+            </ol>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>INFORMATION ET CONTACT</h3>
+            <p>Pour toute information complémentaire ou pour vous associer aux actions visant à rétablir une gestion conforme au cadre légal et protéger notre patrimoine commun :</p>
+            <p style="margin-top: 10px; text-align: center; font-size: 1.2rem;"><a href="mailto:freevalet@gmail.com" style="color: var(--ukraine-yellow);">freevalet@gmail.com</a></p>
+        </div>
+        
+        <div class="note-personnelle">
+            <h3 style="margin-top: 0; color: var(--ukraine-blue);">Note personnelle</h3>
+            <p>Chers voisins et copropriétaires,</p>
+            <p>Cette démarche d'information n'est pas entreprise de gaieté de cœur. Mon engagement au sein du conseil syndical visait initialement à mettre mes compétences professionnelles au service de notre résidence, dans un esprit constructif et collaboratif.</p>
+            <p>Face aux obstacles systématiques rencontrés et aux irrégularités documentées, j'ai le sentiment que mon devoir envers la collectivité est de porter ces faits à votre connaissance, afin que chacun puisse se forger sa propre opinion en toute transparence.</p>
+            <p>Ma situation personnelle en tant que personne reconnue RQTH rend parfois cette tâche plus complexe, notamment lorsque les réunions se tiennent sans aménagements raisonnables. Malgré cela, je reste déterminé à défendre nos intérêts communs et la bonne gestion de notre patrimoine.</p>
+            <p>Je reste ouvert au dialogue constructif avec chacun d'entre vous et suis disponible pour échanger sur ces sujets qui nous concernent tous.</p>
+            <p style="margin-top: 10px;">Cordialement,<br>Éric Valet</p>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>Document affiché en application de l'article 9 de la loi du 10 juillet 1965 garantissant le droit à l'information des copropriétaires</p>
+        <p>Éric Valet - Membre du Conseil Syndical - Résidence Park View - Mai 2025</p>
+    </footer>
+</body>
+</html>
